@@ -27,9 +27,10 @@ $ ssh -i .ssh/digitalocean root@137.184.120.168
 ```bash
 ~# apt update
 ~# apt upgrade
+~# apt install openjdk-8-jre-headless
 ```
 
-### create a user
+#### create a user
 ```bash
 ~# adduser application
 ~# usermod -aG sudo application
@@ -44,7 +45,7 @@ $ sudo vim .ssh/authorized_keys
 gradle build
 ```
 ```bash
-scp -i /home/<user>/.ssh/digitalocean build/libs/devops-module5-project.jar application@137.184.120.168:/
+scp -i /home/<user>/.ssh/digitalocean build/libs/devops-module5-project.jar root@137.184.120.168:/home/application
 ```
 
 ```bash
@@ -67,6 +68,3 @@ $ netstat -lpnt
 ```
 
 ### in Droplet for Nexus
-```bash
-~# apt install openjdk-8-jre-headless
-```
